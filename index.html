@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schland Portal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid #334155;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 25px;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: 0.2s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: #334155;
+}
+
+.card h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.status {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #22c55e;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 12px;
+    color: #64748b;
+    border-top: 1px solid #334155;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Schland Portal</h1>
+    <p>Interne Infrastruktur – Zugriff nur über VPN</p>
+</header>
+
+<div class="container">
+
+    <!-- Bestehende Dienste -->
+
+    <a class="card" href="http://iobroker.schland-chat.de:8081" target="_blank">
+        <h2>ioBroker</h2>
+        <p>Automation & Adapter Verwaltung</p>
+		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
+        
+    </a>
+
+    <a class="card" href="http://nodered.schland-chat.de:1880" target="_blank">
+        <h2>Node-RED</h2>
+        <p>Flows & Integrationen</p>
+		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
+        
+    </a>
+
+    <a class="card" href="http://vault.schland-chat.de:8000" target="_blank">
+        <h2>Vaultwarden</h2>
+        <p>Passwortverwaltung</p>
+		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
+        
+    </a>
+
+    <a class="card" href="https://pve.schland-chat.de:8006" target="_blank">
+        <h2>Proxmox VE</h2>
+        <p>Virtualisierung & Container</p>
+		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
+        
+    </a>
+
+    <!-- Platzhalter Container 1 -->
+
+    <a class="card" href="PLATZHALTER-URL" target="_blank">
+        <h2>PLATZHALTER-NAME 1</h2>
+        <p>Individuelle Weiterleitung</p>
+        <div class="status">URL hier einsetzen</div>
+    </a>
+
+    <!-- Platzhalter Container 2 -->
+
+    <a class="card" href="PLATZHALTER-URL" target="_blank">
+        <h2>PLATZHALTER-NAME 2</h2>
+        <p>Individuelle Weiterleitung</p>
+        <div class="status">URL hier einsetzen</div>
+    </a>
+
+<!-- KONTAKT -->
+
+    <a class="card" href="mailto:timo.schneider0504@gmail.com" target="_blank">
+        <h2>STÖRUNG</h2>
+        <p>Beim letzten Alarm hat etwas nicht funktioniert?</p>
+        <div class="status">First-Level-Support-Timo_Schneider</div>
+    </a>
+	
+</div>
+
+<footer>
+    Impressum · Provided by 777 and TS
+</footer>
+
+</body>
+</html>
