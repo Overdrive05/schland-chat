@@ -1,156 +1,457 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schland Portal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karriereportal | Zentrale Bewerbung</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #e2e8f0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-header {
-    padding: 40px 20px;
-    text-align: center;
-    background: rgba(15, 23, 42, 0.9);
-    border-bottom: 1px solid #334155;
-}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f8;
+      color: #1f2933;
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 30px;
-}
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #d8dee6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-header p {
-    margin-top: 8px;
-    color: #94a3b8;
-    font-size: 14px;
-}
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 22px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.container {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0b1f33;
+    }
 
-.card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    padding: 25px;
-    text-decoration: none;
-    color: #e2e8f0;
-    transition: 0.2s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
+    .logo span {
+      color: #8a6f2a;
+    }
 
-.card:hover {
-    transform: translateY(-6px);
-    background: #334155;
-}
+    .nav a {
+      text-decoration: none;
+      color: #1f2933;
+      margin-left: 28px;
+      font-weight: 500;
+    }
 
-.card h2 {
-    margin: 0 0 10px 0;
-    font-size: 20px;
-}
+    .nav a:hover {
+      color: #8a6f2a;
+    }
 
-.card p {
-    margin: 0;
-    font-size: 14px;
-    color: #94a3b8;
-}
+    .hero {
+      background: linear-gradient(rgba(8, 24, 40, 0.82), rgba(8, 24, 40, 0.82)),
+                  url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 40px;
+    }
 
-.status {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #22c55e;
-}
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    font-size: 12px;
-    color: #64748b;
-    border-top: 1px solid #334155;
-    margin-top: 40px;
-}
-</style>
+    .hero h1 {
+      font-size: 52px;
+      max-width: 760px;
+      margin: 0 0 22px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 680px;
+      color: #e5eaf0;
+      margin-bottom: 35px;
+    }
+
+    .hero button {
+      background: #8a6f2a;
+      color: white;
+      border: none;
+      padding: 16px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #0b1f33;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border: 1px solid #d8dee6;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: #10263b;
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #5f6c7b;
+    }
+
+    .jobs {
+      margin-top: 80px;
+    }
+
+    .job {
+      background: white;
+      border: 1px solid #d8dee6;
+      padding: 26px 30px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .job h3 {
+      margin: 0;
+      color: #10263b;
+    }
+
+    .job p {
+      margin: 6px 0 0;
+      color: #64748b;
+    }
+
+    .tag {
+      background: #eef2f6;
+      padding: 8px 14px;
+      font-size: 14px;
+      color: #10263b;
+      white-space: nowrap;
+    }
+
+    .team {
+      margin-top: 80px;
+    }
+
+    .person {
+      background: white;
+      border: 1px solid #d8dee6;
+      padding: 28px;
+    }
+
+    .person strong {
+      display: block;
+      color: #10263b;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .application {
+      margin-top: 80px;
+      background: white;
+      border: 1px solid #d8dee6;
+      padding: 45px;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #10263b;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #b8c2cc;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .full {
+      margin-top: 22px;
+    }
+
+    .submit {
+      margin-top: 30px;
+      background: #10263b;
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0b1f33;
+      color: #cbd5e1;
+      padding: 40px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 750px) {
+      .nav {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav a {
+        margin: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .job {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Schland Portal</h1>
-    <p>Interne Infrastruktur – Zugriff nur über VPN</p>
+  <div class="nav">
+    <div class="logo">Karriere<span>Portal</span></div>
+    <nav>
+      <a href="#bereiche">Bereiche</a>
+      <a href="#stellen">Stellen</a>
+      <a href="#team">Ansprechpartner</a>
+      <a href="#bewerbung">Bewerbung</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<section class="hero">
+  <div class="hero-content">
+    <h1>Ihre Bewerbung für verantwortungsvolle Aufgaben im internen Einsatzbereich</h1>
+    <p>
+      Entdecken Sie strukturierte Einsatzmöglichkeiten in technischen, organisatorischen und administrativen Fachbereichen.
+    </p>
+    <button onclick="document.getElementById('bewerbung').scrollIntoView()">Jetzt bewerben</button>
+  </div>
+</section>
 
-    <!-- Bestehende Dienste -->
+<main>
 
-    <a class="card" href="http://iobroker.schland-chat.de:8081" target="_blank">
-        <h2>ioBroker</h2>
-        <p>Automation & Adapter Verwaltung</p>
-		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
-        
-    </a>
+  <section id="bereiche">
+    <div class="section-title">
+      <h2>Unsere Fachbereiche</h2>
+      <p>Professionelle Strukturen, klare Zuständigkeiten und verlässliche Abläufe.</p>
+    </div>
 
-    <a class="card" href="http://nodered.schland-chat.de:1880" target="_blank">
-        <h2>Node-RED</h2>
-        <p>Flows & Integrationen</p>
-		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
-        
-    </a>
+    <div class="grid">
+      <div class="card">
+        <h3>Technischer Dienst</h3>
+        <p>Prüfung, Wartung, Instandhaltung und technische Einsatzunterstützung.</p>
+      </div>
 
-    <a class="card" href="http://vault.schland-chat.de:8000" target="_blank">
-        <h2>Vaultwarden</h2>
-        <p>Passwortverwaltung</p>
-		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
-        
-    </a>
+      <div class="card">
+        <h3>Verwaltung & Organisation</h3>
+        <p>Koordination, Dokumentation, Vorgangsbearbeitung und interne Verwaltung.</p>
+      </div>
 
-    <a class="card" href="https://pve.schland-chat.de:8006" target="_blank">
-        <h2>Proxmox VE</h2>
-        <p>Virtualisierung & Container</p>
-		<div class="status">ADMIN-USE-ONLY!Keine Verbindung möglich</div>
-        
-    </a>
+      <div class="card">
+        <h3>Qualitätssicherung</h3>
+        <p>Kontrollverfahren, Prüfberichte und Sicherstellung interner Standards.</p>
+      </div>
 
-    <!-- Platzhalter Container 1 -->
+      <div class="card">
+        <h3>Materialwesen</h3>
+        <p>Bestandsführung, Beschaffung, Lagerkoordination und Materialausgabe.</p>
+      </div>
+    </div>
+  </section>
 
-    <a class="card" href="PLATZHALTER-URL" target="_blank">
-        <h2>PLATZHALTER-NAME 1</h2>
-        <p>Individuelle Weiterleitung</p>
-        <div class="status">URL hier einsetzen</div>
-    </a>
+  <section class="jobs" id="stellen">
+    <div class="section-title">
+      <h2>Aktuelle Bewerbungsfelder</h2>
+      <p>Für folgende Einsatzbereiche können derzeit Bewerbungen eingereicht werden.</p>
+    </div>
 
-    <!-- Platzhalter Container 2 -->
+    <div class="job">
+      <div>
+        <h3>Mitarbeiter Technischer Dienst</h3>
+        <p>Fachbereich Technik | Kennziffer: KP-2026-014</p>
+      </div>
+      <span class="tag">Bewerbung offen</span>
+    </div>
 
-    <a class="card" href="PLATZHALTER-URL" target="_blank">
-        <h2>PLATZHALTER-NAME 2</h2>
-        <p>Individuelle Weiterleitung</p>
-        <div class="status">URL hier einsetzen</div>
-    </a>
+    <div class="job">
+      <div>
+        <h3>Sachbearbeitung Einsatzkoordination</h3>
+        <p>Fachbereich Verwaltung | Kennziffer: KP-2026-021</p>
+      </div>
+      <span class="tag">Bewerbung offen</span>
+    </div>
 
-<!-- KONTAKT -->
+    <div class="job">
+      <div>
+        <h3>Prüfbeauftragter Qualitätssicherung</h3>
+        <p>Fachbereich Qualität | Kennziffer: KP-2026-033</p>
+      </div>
+      <span class="tag">In Prüfung</span>
+    </div>
+  </section>
 
-    <a class="card" href="mailto:timo.schneider0504@gmail.com" target="_blank">
-        <h2>STÖRUNG</h2>
-        <p>Beim letzten Alarm hat etwas nicht funktioniert?</p>
-        <div class="status">First-Level-Support-Timo_Schneider</div>
-    </a>
-	
-</div>
+  <section class="team" id="team">
+    <div class="section-title">
+      <h2>Ansprechpartner</h2>
+      <p>Unsere zuständigen Fachverantwortlichen für Ihre Bewerbung.</p>
+    </div>
+
+    <div class="grid">
+      <div class="person">
+        <strong>Dr. Martin Hagedorn</strong>
+        Leitung Personalsteuerung<br>
+        Zentrale Verwaltung
+      </div>
+
+      <div class="person">
+        <strong>Sabine Krüger</strong>
+        Koordination Bewerbungsverfahren<br>
+        Personal & Organisation
+      </div>
+
+      <div class="person">
+        <strong>Thomas Berger</strong>
+        Leitung Technischer Dienst<br>
+        Technische Einsatzplanung
+      </div>
+    </div>
+  </section>
+
+  <section class="application" id="bewerbung">
+    <div class="section-title">
+      <h2>Bewerbungsformular</h2>
+      <p>Bitte reichen Sie Ihre Angaben vollständig und sorgfältig ein.</p>
+    </div>
+
+    <form>
+      <div class="form-grid">
+        <div>
+          <label>Vorname</label>
+          <input type="text" required>
+        </div>
+
+        <div>
+          <label>Nachname</label>
+          <input type="text" required>
+        </div>
+
+        <div>
+          <label>E-Mail-Adresse</label>
+          <input type="email" required>
+        </div>
+
+        <div>
+          <label>Telefonnummer</label>
+          <input type="tel">
+        </div>
+
+        <div>
+          <label>Gewünschter Fachbereich</label>
+          <select required>
+            <option>Bitte auswählen</option>
+            <option>Technischer Dienst</option>
+            <option>Verwaltung & Organisation</option>
+            <option>Qualitätssicherung</option>
+            <option>Materialwesen</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Gewünschte Position</label>
+          <select required>
+            <option>Bitte auswählen</option>
+            <option>Mitarbeiter Technischer Dienst</option>
+            <option>Sachbearbeitung Einsatzkoordination</option>
+            <option>Prüfbeauftragter Qualitätssicherung</option>
+            <option>Koordinator Materialwesen</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="full">
+        <label>Berufliche Erfahrung / Qualifikation</label>
+        <textarea required></textarea>
+      </div>
+
+      <div class="full">
+        <label>Motivation der Bewerbung</label>
+        <textarea required></textarea>
+      </div>
+
+      <button class="submit" type="submit">Bewerbung absenden</button>
+    </form>
+  </section>
+
+</main>
 
 <footer>
-    Impressum · Provided by 777 and TS
+  © 2026 KarrierePortal | Interne Projektumgebung | Vertraulich
 </footer>
 
 </body>
